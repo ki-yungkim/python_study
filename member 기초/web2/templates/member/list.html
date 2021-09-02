@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>회원 목록</h3>
+<a href = "/member/add">회원 등록</a><br/>
+<table border="1">
+    <tr><th>아이디</th><th>비밀번호</th><th>이름</th><th>이메일</th></tr>
+    {% for m in mlist %}
+    <tr><td><a href = "/member/get?id={{m.getId()}}">{{m.getId()}}</a></td>
+        <td>{{m.getPw()}}</td>
+        <td>{{m.getName()}}</td>
+        <td>{{m.getEmail()}}</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>
